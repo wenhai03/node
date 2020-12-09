@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<input type="file" id="fileInp">
+<!--前端实现下载功能-->
+
+<script>
+  // 第二种预览 h5 api FileReader
+  fileInp.addEventListener('change', (e) => {
+    let file = e.target.files[0] // File就是Blob类型的子类
+    let fileReader = new FileReader()
+    fileReader.onload = function () {
+      let img = new Image()
+      img.src = fileReader.result
+      document.body.appendChild(img)
+    }
+    fileReader.readAsDataURL(file)
+  })
+
+
+
+  // 文件预览可以使用 createObjURL
+/*   fileInp.addEventListener('change', (e) => {
+    let file = e.target.files[0] // File就是Blob类型的子类
+    console.log('file -> ', file)
+    let img = new Image()
+    img.src = URL.createObjectURL(file)
+     // URL.revokeObjectURL(img.src) // 释放路径
+    document.body.appendChild(img)
+  })*/
+
+
+  /*let str = `<h2>你好 欢迎</h2>` // excel 下载本地
+  let blob = new Blob([str], {
+    type: 'text/html'
+  })
+  // 可以用视图来读取 fileReader
+  let aElement = document.createElement('a')
+  // createObjectUrl
+  aElement.setAttribute('download', 'index.html')
+  aElement.href = URL.createObjectURL(blob) // 产生一个临时路径
+  aElement.click()
+  // console.log('blob -> ', blob) // 默认看不到内容*/
+
+
+</script>
+</body>
+</html>
