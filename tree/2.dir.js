@@ -28,9 +28,6 @@ fs.readdir('a', (err, dirs) => {
     
     return p
   })
-  
-  
-  
   // 读取的结果只有儿子一层
   // console.log('dirs -> ', dirs)
 })
