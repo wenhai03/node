@@ -3,7 +3,6 @@
 
 const fs = require('fs')
 const path = require('path')
-
 // 1.如果我们是读取文件 读取到的结果默认都是buffer类型
 // 2.写入的时候，会清空文件内容，并且以utf8格式类型写入
 /*fs.readFile(path.resolve(__dirname, 'node.md'),  function (err, data) {
@@ -13,7 +12,7 @@ const path = require('path')
 /*fs.readFile(path.resolve(__dirname, 'test.jpg'), 'base64', function (err, data) {
   // 执行图片转化成base64，采用utf8格式会乱码
   console.log('data', data)
-  // appendFile    flag: r => read    w=write    a=append
+  // appendFile    flag: r => read    w=write    c=append
   fs.writeFile(path.resolve(__dirname, 'test1.jpg', data, function (err, data) {
     console.log('copy -> ')
   }))

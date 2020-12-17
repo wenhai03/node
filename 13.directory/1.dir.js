@@ -4,8 +4,8 @@ const fs = require('fs')
 const path = require('path')
 // 项目构建 文件的合并操作
 
-// 读当前目录的子目录 ['a.js', 'b']
-// let dirs = fs.readdirSync(path.join(__dirname, 'a'))
+// 读当前目录的子目录 ['c.js', 'b']
+// let dirs = fs.readdirSync(path.join(__dirname, 'c'))
 // console.log(dirs)
 
 //  创建目录  删除目录  创建文件writeFile  删除文件 给文件改名字
@@ -19,7 +19,7 @@ const path = require('path')
 
 
 // 第一步先去读取a目录中的内容，去查找子目录是什么类型
-let dirs = fs.readdirSync('./a')
+let dirs = fs.readdirSync('./c')
 dirs.map(item => { // 拼接父路径
   let currentPath = path.join('a', item)
   let statObj = fs.statSync(currentPath) // 文件的大小 文件的修改时间 创建时间

@@ -23,14 +23,14 @@ console.log(' ->222 ', path.join(__dirname, 'node.md', '/'))
 // 如果遇到带/的路径 resolve会认为是根路径 join则是拼接在一起
 
 
-console.log(path.extname('a.min.js')) // .js 取后缀名
+console.log(path.extname('c.min.js')) // .js 取后缀名
 
 console.log('path.dirname(__dirname) -> ', path.dirname(__dirname)) // __dirname == path.dirname
 console.log('path.resolve(__dirname) -> ', path.resolve(__dirname))
 
 const vm = require('vm')
 let a = 1
-const log = 'console.log(a)' // eval 执行时会查找上下文
+const log = 'console.log(c)' // eval 执行时会查找上下文
 
 // new Function也是可以产生一个执行环境，不依赖于外层作用域，必须包一层函数 模板引擎中会使用new Function
 // let fn = new Function(log)

@@ -8,7 +8,7 @@ const path = require('path')
 // 这里我们以异步为例，异步代码稍微的复杂一些
 
 
-fs.mkdir('a/b/c.js', (err) => {
+fs.mkdir('c/b/c.js', (err) => {
   // console.log(err) // 创建目录前 需要保证父目录存在
 })
 
@@ -32,4 +32,4 @@ fs.readdir('a', (err, dirs) => {
   // console.log('dirs -> ', dirs)
 })
 
-// console.log(' -> ', path.join('a', 'item'))
+// console.log(' -> ', path.join('c', 'item'))

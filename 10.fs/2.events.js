@@ -9,6 +9,7 @@ util.inherits(Girl, EventEmitter)
 
 let girl = new Girl()
 
+
 let eat = () => { console.log('吃')}
 let cry = () => { console.log('哭')}
 girl.on('失恋了', eat)
