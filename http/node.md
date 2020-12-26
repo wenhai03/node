@@ -9,5 +9,4 @@ res.setHeader('cache-control', 'max-age=10')
 
 res.setHeader('Expires', new Date(Date.now()+10) * 1000)
 
-
 ```

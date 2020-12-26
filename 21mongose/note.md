@@ -1,3 +1,15 @@
+## mac安装
+- brew tap mongodb/brew
+- brew install mongodb-community
+- brew services start mongodb-community
+- brew install mongodb-community
+
+## 数据库分为两部分
+- 服务端 mongod
+- 客户端 mongo
+
+> 如果希望手动启动 mongod --dbpath=路径 --port
+
 ## mongo导出结果
 - mongoexport -u zhu -p zhu -d 数据库  -c 集合  --csv -f name,age -o xxx.csv
 
