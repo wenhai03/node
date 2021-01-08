@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<!--
+原生 js 上传
+  需要用 HTTP2.0 的技术
+  一个内置的构造函数 FormData()
+  => 语法：new FormData()
+  => 返回一个包含 form 元素里面所有带有 name 属性元素的值
+  => 直接打印看不到
+-->
+
+<form>
+  <input type="file" name="avatar">
+  <input type="text" name="username" placeholder="请填写">
+  <button>上传</button>
+</form>
+
+<script>
+  // 1.获取元素绑定事件
+  const form = document.querySelector('form')
+  form.addEventListener('submit', function (e) {
+    e.preventDefault()
+    // 2.拿到文件
+    const formData = new FormData(this)
+    console.log('formData -> ', formData)
+    for (let formDataKey of formData) {
+      console.log('formDataKey', formDataKey)
+    }
+    // 3.正常 ajax 发送
+    const xhr = new XMLHttpRequest
+    xhr.open('POST', 'xxx')
+
+    // 不需要单独设置请求头
+    // 因为formData会自动设置请求头
+    xhr.send(formData)
+    xhr.onload = function () {
+
+    }
+  })
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<!--
+表单直接上传
+ form 标签的设置
+      action    设置服务器地址
+      method    POST 方式
+      enctype   mutilpart/form-data
+         enctype    设置 请求头中的 content-type
+         mutilpart  设置以二进制的形式上传
+ input
+    type 选择成 file
+    name 设置一个名字
+-->
+
+<form action="http://localhost:8080/upload" method="POST" enctype="multipart/form-data">
+  <input type="file" name="avatar">
+  <input type="text" name="username" placeholder="请填写">
+  <button>上传</button>
+</form>
+</body>
+</html>
